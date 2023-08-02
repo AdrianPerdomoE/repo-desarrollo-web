@@ -1,10 +1,7 @@
-.container{
-    margin: 5rem 10% 5rem;
+.splited{
+    display: flex;
+    margin: 1rem;
 }
-.image{
-    border-radius: 30rem;
-    
-}
-.left{
-   background: linear-gradient();
+.text{
+    margin: 1rem;
 }
