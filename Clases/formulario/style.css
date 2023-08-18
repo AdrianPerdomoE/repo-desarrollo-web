@@ -1,0 +1,42 @@
+.form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pair{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #607080;
+    margin: 1rem;
+    border-radius: 5px;
+}
+input[type="text"],[type="email"]{
+    width: 100%;
+    min-height:40px;
+    border-radius: 3px;
+    border: 0;
+    text-align: center;
+}
+.pairCondition{
+    margin: 1rem;    
+}
+
+label{
+    margin: 5px;
+    text-align: center;
+}
+label::after{
+    content: ':';
+}
+.textarea{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="logic.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Formulario de tareas y actividades</h1>
+      <form action="javascript:void(0)" class="content" onsubmit="getData()">
+        <div class="pair">
+          <label for="txName">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="txName"
+            placeholder="Ingrese su nombre"
+          />
+        </div>
+        <div class="pair">
+          <label for="txEmail">Correo</label>
+          <input
+            type="email"
+            id="email"
+            name="txEmail"
+            placeholder="Ingrese su correo"
+          />
+        </div>
+        <div class="pair textarea">
+          <label for="txdescr">Descpricion de la tarea</label>
+          <textarea
+            name="txdescr"
+            cols="30"
+            rows="10"
+            id="Descripcion"
+          ></textarea>
+        </div>
+        <div class="pairCondition">
+          <input type="checkbox" name="conditions" id="acept" />
+          <label for="conditions"
+            ><a href="google.com" target="_blank"
+              >Acepta terminos y condiciones</a
+            ></label
+          >
+        </div>
+        <button type="submit" value="enviar">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
