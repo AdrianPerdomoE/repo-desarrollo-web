@@ -5,8 +5,8 @@
     <v-navigation-drawer>
       <v-list>
         <!-- Navegacion -->
-        <v-list-item to="/"><v-icon icon="mdi-home" /> Inicio </v-list-item>
-        <v-list-item title="Tareas" to="/tareas"></v-list-item>
+        <v-list-item to="/"><v-icon icon="mdi-home" /> Principal </v-list-item>
+        <v-list-item title="Personajes" to="/personajes"></v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-main class="align-center justify-center">
@@ -16,13 +16,7 @@
   </v-layout>
 </template>
 <script setup>
-const titleApp = ref("App de Tareas")
-let likes = ref(0)
-
-const incrementLikes = () => {
-  // NOTA: Recuerda acceder al valor de la propiedad con .value
-  likes.value++
-}
+const titleApp = ref("MARVEL")
 </script>
 
 <style>

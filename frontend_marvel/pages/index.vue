@@ -1,7 +1,5 @@
 <template>
-  <NuxtLink to="/marvel_caracters">
-    Click para ver personajes
-  </NuxtLink>
+  <h1>Bienvenido</h1>
 </template>
 <script>
 definePageMeta({
