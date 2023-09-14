@@ -1,5 +1,5 @@
 <template >
-    <v-container style="width: 100dvw; height: 100dvh; background-color: aqua;">
+    <v-container style="width: 100dvw; height: 100dvh; background-color:#eee">
         <v-row justify="start">
             <v-col cols="4">
                 <v-img width="80%" aspect-ratio="3/4" class="img" cover

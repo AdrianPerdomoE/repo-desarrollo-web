@@ -1,18 +1,18 @@
 <template>
-    <div class="mt-3">
+    <div class="mt-3 text-center">
 
-        <h3>Listado de personajes</h3>
+        <h1>Listado de personajes</h1>
 
         <v-container>
             <v-row>
                 <v-col v-for="item in caracters" :key="item.id">
-                    <v-card width="350" height="500" @click="openDialog(item)" :title="item.name" class="card">
+                    <v-card width="350" height="400" @click="openDialog(item)" :title="item.name" class="card">
                         <v-img width="340" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
                             cover></v-img>
                     </v-card>
                     <v-dialog v-model="dialog" width="auto">
                         <personaje :caracter="actualCaracter"></personaje>
-                        <v-btn color="primary" block @click="dialog = false">Cerrar</v-btn>
+                        <v-btn color="#B50D0C" block @click="dialog = false">Cerrar</v-btn>
                     </v-dialog>
 
                 </v-col>
@@ -47,21 +47,29 @@ const loadCaracters = async () => {
     caracters.value = data.data.results.filter(caracter => {
         return !caracter.thumbnail.path.includes("image_not_available");
     })
-    console.log(data.data.results)
 }
-</script>`
+</script>
 <style>
+* {
+    font-weight: 900 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
+}
+
 .card {
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 50px;
+    border-radius: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    padding: 15px !important;
+    border: solid 2px black !important;
+    box-shadow: 3px 2px 5px 2px rgba(0, 0, 0, 0.6) !important;
+    background-color: hsl(0.36, 87.56%, 37.84%) !important;
 }
 
 .img {
-    border-radius: 100%;
+    border-radius: 30px;
     margin-bottom: 1px;
 }
 </style>
