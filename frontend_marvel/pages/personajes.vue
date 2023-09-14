@@ -6,14 +6,9 @@
         <v-container>
             <v-row>
                 <v-col v-for="item in caracters" :key="item.id">
-                    <v-card width="500" @click="redirect(item.id)" :title="item.name">
-                        <v-card-item>
-                            <v-card-title>Descripcion</v-card-title>
-                            <v-card-text>
-                                {{ item.description }}
-                            </v-card-text>
-                        </v-card-item>
-                        <v-img :width="250" aspect-ratio="16/9" cover
+                    <v-card width="300" height="300" @click="redirect(item.id)" :title="item.name"
+                        style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
+                        <v-img width="80%" aspect-ratio="3/4" style="border-radius: 5px;margin-bottom: 1px;" cover
                             :src="item.thumbnail.path + '.' + item.thumbnail.extension"></v-img>
 
                     </v-card>

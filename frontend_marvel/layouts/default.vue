@@ -1,8 +1,10 @@
 <template>
   <v-layout class="rounded rounded-md">
-    <v-app-bar :title="titleApp">
+    <v-app-bar>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-title>{{ titleApp }}</v-app-bar-title>
     </v-app-bar>
-    <v-navigation-drawer>
+    <v-navigation-drawer v-model="drawer" temporary>
       <v-list>
         <!-- Navegacion -->
         <v-list-item to="/"><v-icon icon="mdi-home" /> Principal </v-list-item>
@@ -17,6 +19,7 @@
 </template>
 <script setup>
 const titleApp = ref("MARVEL")
+const drawer = ref(null)
 </script>
 
 <style>
