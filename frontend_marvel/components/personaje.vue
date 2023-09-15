@@ -7,13 +7,15 @@
             </v-col>
             <v-col cols="6" style="text-align: center;">
                 <h1>{{ caracter.name }}</h1>
-                <v-row justify="center">
+                <v-row>
                     <v-col :v-if="caracter.description">
                         <p class="text-center">
                             {{ caracter.description }}
                         </p>
                     </v-col>
-                    <v-col>
+                </v-row>
+                <v-row>
+                    <v-col style="border-radius: 15px;">
                         <v-table>
                             <tbody>
                                 <tr>
@@ -45,7 +47,7 @@
         </v-row>
         <v-row justify="center" v-for=" (serie, index) in caracter.series.items" :key="index">
             <v-col cols="5" v-if="index < 3">
-                <h2>{{ serie.name }}</h2>
+                <h2>{{ index + 1 }}. {{ serie.name }}</h2>
             </v-col>
         </v-row>
 
@@ -58,3 +60,9 @@ export default {
     }
 }
 </script>
+<style>
+td {
+    background-color: #343391;
+    color: white;
+}
+</style>
