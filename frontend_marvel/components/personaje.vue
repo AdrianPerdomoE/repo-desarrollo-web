@@ -38,18 +38,20 @@
                         </v-table>
                     </v-col>
                 </v-row>
+                <v-row justify="center">
+                    <v-col cols="2">
+                        <h1>Series</h1>
+                    </v-col>
+                </v-row>
+                <v-row justify="center" v-for=" (serie, index) in caracter.series.items" :key="index">
+                    <v-col cols="12" v-if="index < 3">
+                        <h2>{{ index + 1 }}. {{ serie.name }}</h2>
+                    </v-col>
+                </v-row>
             </v-col>
+
         </v-row>
-        <v-row justify="center">
-            <v-col cols="2">
-                <h1>Series</h1>
-            </v-col>
-        </v-row>
-        <v-row justify="center" v-for=" (serie, index) in caracter.series.items" :key="index">
-            <v-col cols="5" v-if="index < 3">
-                <h2>{{ index + 1 }}. {{ serie.name }}</h2>
-            </v-col>
-        </v-row>
+
 
     </v-container>
 </template>

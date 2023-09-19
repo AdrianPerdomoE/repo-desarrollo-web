@@ -5,12 +5,18 @@
 
         <v-container>
             <v-row>
-                <v-col v-for="item in caracters" :key="item.id">
+                <v-col v-for="n in 12" :key="n" v-if="loading">
+                    <v-card width="350" height="400" class="card">
+                        <v-progress-circular indeterminate color="#EF9A9A" :size="70" :width="7"></v-progress-circular>
+                    </v-card>
+                </v-col>
+
+                <v-col v-for="item in caracters" :key="item.id" v-if="!loading">
                     <v-card width="350" height="400" @click="openDialog(item)" :title="item.name" class="card">
                         <v-img width="340" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
                             cover></v-img>
                     </v-card>
-                    <v-dialog v-model="dialog" width="auto">
+                    <v-dialog v-model="dialog" width="auto" style="background: none !important;">
                         <personaje :caracter="actualCaracter"></personaje>
                         <v-btn color="#B50D0C" block @click="dialog = false">Cerrar</v-btn>
                     </v-dialog>
@@ -30,7 +36,7 @@ const PRIV_KEY = "dc1c9e15c529c9176fa615bb364c6b538eb8b563";
 const PUBLIC_KEY = "1069f78b41731dbb5ca5cba2f9844744";
 const caracters = ref([])
 const actualCaracter = ref(null)
-
+const loading = ref(true)
 onBeforeMount(() => {
     loadCaracters()
 })
@@ -47,6 +53,7 @@ const loadCaracters = async () => {
     caracters.value = data.data.results.filter(caracter => {
         return !caracter.thumbnail.path.includes("image_not_available");
     })
+    loading.value = false;
 }
 </script>
 <style>
@@ -71,5 +78,10 @@ const loadCaracters = async () => {
 .img {
     border-radius: 30px;
     margin-bottom: 1px;
+}
+
+.v-overlay__scrim {
+    background: none !important;
+
 }
 </style>

@@ -13,7 +13,7 @@
         <v-list-item class="text-black" title="Personajes" to="/personajes"></v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main class="align-center justify-center" style="background-color:#ddd;">
+    <v-main class="align-center justify-center h-screen" style="background-color:#ddd; ">
       <!-- slot: Carga el contenido de la página (pages/..) -->
       <slot />
     </v-main>
